@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Wx-S8-aHw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Brutto Netto Rechner-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BruttoNettoRechner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,88 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monatseinkommen (brutto)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCi-aF-NU6">
+                                <rect key="frame" x="197" y="120" width="207" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wIq-KJ-n9y">
+                                <rect key="frame" x="198" y="149" width="205" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="I7u-c6-E7w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjP-R6-CPM">
+                                <rect key="frame" x="33" y="277" width="529" height="224"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ak7-T0-qun">
+                                <rect key="frame" x="263" y="194" width="74" height="30"/>
+                                <state key="normal" title="Berechnen">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calcBruttoNetto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TwW-me-tjd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UjP-R6-CPM" secondAttribute="bottom" constant="99" id="9cc-lg-0CT"/>
+                            <constraint firstItem="wIq-KJ-n9y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C5u-Dy-QwG"/>
+                            <constraint firstItem="yCi-aF-NU6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="56" id="NFV-6B-Iq3"/>
+                            <constraint firstItem="yCi-aF-NU6" firstAttribute="centerX" secondItem="wIq-KJ-n9y" secondAttribute="centerX" id="TPv-Tp-yff"/>
+                            <constraint firstItem="wIq-KJ-n9y" firstAttribute="centerX" secondItem="ak7-T0-qun" secondAttribute="centerX" id="lFq-y6-8uU"/>
+                            <constraint firstItem="UjP-R6-CPM" firstAttribute="top" secondItem="ak7-T0-qun" secondAttribute="bottom" constant="53" id="olf-v2-cbR"/>
+                            <constraint firstItem="ak7-T0-qun" firstAttribute="top" secondItem="wIq-KJ-n9y" secondAttribute="bottom" constant="15" id="qiX-7U-Qva"/>
+                            <constraint firstItem="wIq-KJ-n9y" firstAttribute="top" secondItem="yCi-aF-NU6" secondAttribute="bottom" constant="8" symbolic="YES" id="snu-Jc-vU5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UjP-R6-CPM" secondAttribute="trailing" constant="22" id="yjY-H1-wBP"/>
+                            <constraint firstItem="UjP-R6-CPM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="zee-zC-6zi"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dGQ-sk-cpk" appends="YES" id="Ymu-Rn-YMr"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Brutto Netto Rechner" id="WcQ-d0-d6h" userLabel="Brutto Netto Rechner"/>
+                    <connections>
+                        <outlet property="incomeBrutto" destination="wIq-KJ-n9y" id="syq-h0-jms"/>
+                        <outlet property="incomeLabel" destination="yCi-aF-NU6" id="m82-8h-RLd"/>
+                        <outlet property="resultsTextView" destination="UjP-R6-CPM" id="hnc-D4-fUS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dGQ-sk-cpk">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="8di-fe-dMe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1166" y="1076"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oPk-re-1dV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Wx-S8-aHw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ALA-V8-ncW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bxv-Sx-aDb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c4y-eT-7GG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423" y="1076"/>
         </scene>
     </scenes>
 </document>
